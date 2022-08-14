@@ -1,0 +1,60 @@
+
+
+// - Typefaces
+
+
+
+// - Colors 
+// Scheme
+$color-foreground: #1A1C1E; 
+$color-tint: #555770; 
+$color-gray: #B3B5C3; 
+$color-shade: #F2F2F5; 
+$color-background: #FAFAFC; 
+$color-elevate: #FFFFFF; 
+
+// Semantic
+$color-brand: #71E59A; 
+$color-success: #2BD84E; 
+$color-info: #5C93FA; 
+$color-warning: #FFD323; 
+$color-error: #FF5E6E; 
+
+// Typefaces
+$typeface-body: 
+    "Inter",
+    "Poppins",
+    sans-serif;
+
+
+$typeface-title: 
+    "Inter",
+    "Poppins",
+    sans-serif;
+
+
+// - Weights
+$weight-light: 200; 
+$weight-regular: 300; 
+$weight-bold: 400; 
+
+
+
+
+// Mixins
+@mixin container {
+    position: fixed;
+    top: 0px; 
+    left: 0px; 
+    right: 0px; 
+    
+    width: 100%; 
+}
+
+
+@mixin flex-column{
+    display: flex; 
+    flex-direction: column;
+}
+
+

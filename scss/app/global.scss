@@ -1,0 +1,157 @@
+
+
+
+@use "./variables" as app;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Poppins:wght@200;300;400&display=swap');
+
+
+* {
+    padding: 0px; 
+    border: 0px; 
+    margin: 0px; 
+    box-sizing: border-box;
+
+    color: inherit; 
+    font-weight: inherit;
+    font-family: inherit;
+    fill: inherit;
+    stroke: inherit;
+
+    line-height: inherit;
+    font-weight: app.$weight-regular;
+}
+
+html {
+    background-color: app.$color-background;
+    
+    fill: none;
+    color: app.$color-foreground; 
+    font-weight: app.$weight-regular;
+    font-family: app.$typeface-body;
+
+    line-height: 150%;
+
+
+}
+
+#main {
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+svg {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+// #region Font Sizes
+@media screen and (min-width: 0px) and (max-width: 599px)
+{
+    html 
+    {
+        font-size: 16px;
+    }
+}
+
+@media screen and (min-width: 600px) and (min-height: 640px)
+{
+    html 
+    {
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width: 840px) and (min-height: 680px)
+{
+    html 
+    {
+        font-size: 18px;
+    }
+}
+// #endregion
+
+
+
+
+// #region Fonts 
+p, input, button, a, label, h1, h2, h3, h4, h5, h6
+{
+    font-family: app.$typeface-body;
+    font-style: normal;
+    font-weight: app.$weight-regular;
+    line-height: 150%;
+}
+
+.font-truncated
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.font-display
+{
+    font-size: 2rem; 
+    font-weight: app.$weight-bold;
+    font-family: app.$weight-regular;
+}
+
+.font-heading
+{
+    font-size: 1.5rem;
+    font-weight: app.$weight-bold;
+}
+
+.font-title
+{
+    font-size: 1.25rem;
+    font-weight: app.$weight-bold;
+}
+
+.font-subtitle
+{
+    font-size: 1.1rem;
+    font-weight: app.$weight-bold;
+}
+
+.font-label
+{
+    font-weight: app.$weight-bold;
+}
+
+.font-lead 
+{
+    font-weight: app.$weight-bold; 
+    font-size: 0.95rem;
+}
+
+.font-trail 
+{
+    font-size: 0.95rem;
+}
+
+.font-caption
+{
+    font-weight: app.$weight-bold;
+    font-size: 0.9rem;
+}
+
+.font-small
+{
+    font-size: 0.85rem;
+    font-weight: app.$weight-bold;
+}
+
+.font-tiny 
+{
+    font-size: 0.85rem;
+}
+// #endregion
+
+
+
