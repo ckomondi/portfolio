@@ -4,18 +4,13 @@ import Image from "next/image";
 import styles from "../scss/cards/browser.module.scss"
 
 interface IBrowserCard {
-
-    favicon: JSX.Element;
-    title: JSX.IntrinsicElements["p"]; 
-
-    view: string; 
-
-
+    favicon: JSX.Element; 
+    title: JSX.IntrinsicElements["p"];
 }
 
 function BrowserCard(props: IBrowserCard) {
 
-    const { favicon, title, view } = props; 
+    const { favicon, title } = props; 
 
     return (
         <div className={ styles.card }>
