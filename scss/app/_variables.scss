@@ -6,24 +6,26 @@
 
 // - Colors 
 // Scheme
-$color-foreground: #1A1C1E; 
-$color-tint: #555770; 
-$color-gray: #B3B5C3; 
-$color-shade: #F2F2F5; 
-$color-background: #FAFAFC; 
+$color-foreground: #0D0D0D; 
+$color-tint: #404040; 
+$color-gray: #737373; 
+$color-shade: #BFBFBF; 
+$color-background: #F8F9FB; 
 $color-elevate: #FFFFFF; 
 
 // Semantic
-$color-brand: #71E59A; 
+$color-brand: #66F27B; 
 $color-success: #2BD84E; 
 $color-info: #5C93FA; 
 $color-warning: #FFD323; 
 $color-error: #FF5E6E; 
 
 // Typefaces
+
 $typeface-body: 
+    "Heebo",
     "Inter",
-    "Poppins",
+    // 'Poppins',
     sans-serif;
 
 
@@ -36,7 +38,7 @@ $typeface-title:
 // - Weights
 $weight-light: 200; 
 $weight-regular: 300; 
-$weight-bold: 400; 
+$weight-bold: 500;
 
 
 

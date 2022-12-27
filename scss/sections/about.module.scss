@@ -1,0 +1,46 @@
+
+
+@use "../app/variables" as app; 
+
+
+#about {
+
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    gap: 8vh 0px; 
+
+    padding: 4vh 8vw; 
+
+
+
+    @media screen and (min-width: 1080px) {
+        margin-top: 8vmax;
+        gap: 1rem 0px; 
+    }
+
+    .body {
+        max-width: 36rem;
+        margin: 0px auto; 
+
+        > p {
+            position: relative; 
+        }
+
+        > p > span {
+            float: left;
+            color: #F24E29; 
+            font-family: serif;
+            text-transform: uppercase; 
+            font-size: 2.5em;
+            line-height: 2rem;
+            padding-right: 1.5rem;
+            transform: translateX(25%) translateY(25%);
+        }
+    }
+
+    .vignette {
+        width: 100%;
+    }
+}
+

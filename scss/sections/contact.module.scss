@@ -1,0 +1,24 @@
+
+
+section#contact {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    gap: 4vmax 0px; 
+}
+
+.psa {
+
+}
+
+.links {
+
+    max-width: 560px;
+    width: 100%;
+
+    display: grid; 
+    grid-template-columns: auto auto; 
+    grid-template-rows: 3rem 3rem;
+}
+

@@ -1,0 +1,45 @@
+
+
+@use "../app/variables" as app; 
+
+
+.social {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    gap: 0px 0.5rem; 
+
+    cursor: pointer;
+    border-bottom: 1px solid app.$color-shade;
+    border-left: 1px solid app.$color-shade;
+
+    &:nth-child(1), &:nth-child(3) {
+        border-left: none;
+    }
+
+    &:nth-child(3), &:nth-child(4) {
+        border-bottom: none;
+    }
+     
+    > :global(button) {
+        width: 2.1rem;
+        height: 2.1rem;
+    }
+
+    * {
+        fill: app.$color-gray; 
+        color: app.$color-gray; 
+    }
+
+    &:hover * {
+        fill: app.$color-foreground; 
+        color: app.$color-foreground;
+    }
+
+    svg {
+        fill: app.$color-foreground !important;
+        stroke: none !important;
+    }
+
+}
+
