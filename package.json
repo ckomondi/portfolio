@@ -12,6 +12,8 @@
     "lint": "next lint"
   },
   "devDependencies": {
+    "@react-spring/parallax": "^9.6.1",
+    "@react-spring/web": "^9.6.1",
     "@types/node": "^18.7.3",
     "@types/react": "^18.0.17",
     "sass": "^1.57.1",

@@ -9,7 +9,7 @@
     position: relative; 
     overflow: hidden;
 
-    padding: 0rem 0px; 
+    padding-top: 3rem;
 }
 
 #showcase {
@@ -30,7 +30,7 @@
         max-width: 100%; 
         max-height: 100%;
         transform: translateY(-2rem);
-        padding: 1rem 1rem; 
+        padding: 1.5rem 1.5rem; 
     }
 }
 
@@ -78,7 +78,7 @@
     right: 0px; 
     bottom: 0px;
 
-    padding: 0vmax 7vw; 
+    padding: 3rem 7vw; 
 
     display: flex;
     justify-content: space-between; 

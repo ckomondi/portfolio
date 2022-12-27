@@ -13,7 +13,7 @@ const Intro = () => {
             </div>
 
             <div className={ styles.widgets }>
-                <div className={ styles.widget && styles.why }>
+                <div className={ `${ styles.widget } ${ styles.why }` }>
                     <h5>Lorem ipsum dolor sit.</h5>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
                 </div>

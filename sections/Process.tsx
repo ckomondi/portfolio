@@ -20,11 +20,11 @@ const Process = () => {
 
 
     return (
-        <section id={ styles.process }>
-            <div id={ styles.windmill } style={{ transform: `rotateZ(-${ selectedIndex * 20 }deg);` }} >
+        <section id={ styles.process } >
+            <div id={ styles.windmill } style={{ transform: `rotateZ(-${ selectedIndex * 20 }deg)` }}>
             {
                 titles.map((title, index) => 
-                    <p style={{ transform: `rotateZ(${ index * 20 }deg);` }} key={ index }>{ title }</p>
+                    <p style={{ transform: `rotateZ(${ index * 20 }deg)` }} key={ index }>{ title }</p>
                 )
             }
             </div>

@@ -7,6 +7,7 @@ import Contact from "../sections/Contact";
 import Intro from "../sections/Intro";
 import Portfolio from "../sections/Portfolio";
 import Process from "../sections/Process";
+import { Parallax, ParallaxLayer } from "@react-spring/parallax"
 
 
 function Index() {
@@ -29,13 +30,24 @@ function Index() {
             </div>
         </nav>
     
-        <main id={ styles.main }>
+        {/* <main id={ styles.main }>
             <Intro />
             <About />
             <Portfolio />
             <Process />
             <Contact />
+        </main> */}
+
+        <main id={ styles.main }>
+        <Parallax pages={ 5 }>
+            <ParallaxLayer offset={ 0 }><Intro /></ParallaxLayer>
+            <ParallaxLayer offset={ 1 }><About /></ParallaxLayer>
+            <ParallaxLayer offset={ 2 }><Portfolio /></ParallaxLayer>
+            <ParallaxLayer offset={ 3 }><Process /></ParallaxLayer>
+            <ParallaxLayer offset={ 4 }><Contact /></ParallaxLayer>
+        </Parallax>
         </main>
+
 
     </>
     )

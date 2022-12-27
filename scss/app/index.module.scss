@@ -3,15 +3,13 @@
 
 
 main#main {
-    width: 100vw;
-
-    > section {
-        width: 100%; 
-        height:  calc(100vh - 3rem);
-    }
-
-
-
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    bottom: 0px; 
+    right: 0px; 
+    width: 100vw; 
+    height: 100vh;
 }
 
 

@@ -26,6 +26,8 @@ html {
     font-size: 16px;
     background-color: app.$color-background;
     fill: none;
+
+    overflow: hidden;
 }
 @media screen and (min-width: 840px) and (min-height: 680px)
 {
@@ -83,6 +85,11 @@ div > img {
     max-height: 100%;
 }
 
+body > div {
+    position: relative; 
+    height: 100vh;
+}
+
 body > main {
     width: 100vw;
 
@@ -90,7 +97,14 @@ body > main {
         width: 100%; 
         height:  calc(100vh - 3rem);
     }
+}
 
-
+body div > section {
+    position: relative; 
+    top: 0px;
+    left: 0px; 
+    right: 0px; 
+    bottom: 0px;
+    height: 100%;
 }
 

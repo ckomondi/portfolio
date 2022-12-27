@@ -11,6 +11,7 @@ function Application({ Component, pageProps } : AppProps) {
         <>
             <Head>
                 <title>CKO • Web Developer</title>
+                <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
             </Head>
 
             
