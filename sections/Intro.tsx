@@ -1,6 +1,7 @@
 
 
 
+import { ParallaxLayer } from "@react-spring/parallax";
 import styles from "../scss/sections/intro.module.scss";
     
 

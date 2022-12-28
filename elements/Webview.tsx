@@ -25,7 +25,7 @@ const Webview = (props: WebviewProperties) => {
             </div>
 
             <div className={ styles.content }>
-                <img className={ isHighlighted ? "highlighted" : undefined } src="/wavyfy.png" alt=""></img>
+                <img className={ isHighlighted ? styles.highlighted : undefined } src="/wavyfy.png" alt=""></img>
             </div>
         </div>
     )

@@ -1,10 +1,16 @@
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { useScrollPaging } from "../hooks/useScrollPaging";
 import styles from "../scss/sections/process.module.scss"; 
 
 
-const Process = () => {
+interface ProcessProperties {
+    position: number; 
+}
 
+const Process = (props: ProcessProperties) => {
+
+    const { position } = props; 
     const titles: string[] = [
         "Next.js",
         "TypeScript",
@@ -13,15 +19,16 @@ const Process = () => {
         "Firebase",
     ]; 
 
-    const [selectedIndex, setSelectedIndex] = useState(0); 
-    const rotateWindmill = () => {
-        setSelectedIndex((index) => index + 1); 
-    }
-
+    const [selectedIndex] = useScrollPaging({
+        position: position,
+        pageOffset: 4,
+        pageLength: 1.5,
+        itemCount: titles.length
+    });
 
     return (
         <section id={ styles.process } >
-            <div id={ styles.windmill } style={{ transform: `rotateZ(-${ selectedIndex * 20 }deg)` }}>
+            <div id={ styles.windmill } style={{ transform: `translateY(8vh) rotateZ(-${ selectedIndex * 20 }deg)` }}>
             {
                 titles.map((title, index) => 
                     <p style={{ transform: `rotateZ(${ index * 20 }deg)` }} key={ index }>{ title }</p>
@@ -34,7 +41,7 @@ const Process = () => {
                     <img src="/favicon.png" alt=""></img>
                 </div>
 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id culpa amet, eligendi laudantium esse sint, molestiae veritatis non, accusantium ratione voluptates labore. Iste, tempora.</p>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum obcaecati nihil minus sapiente dolor! Dicta rerum reiciendis quod modi quidem voluptas consectetur tempora eius!</p>
             </div>
 
         </section>

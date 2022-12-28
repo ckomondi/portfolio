@@ -8,30 +8,18 @@ import Intro from "../sections/Intro";
 import Portfolio from "../sections/Portfolio";
 import Process from "../sections/Process";
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax"
-import { MutableRefObject, useEffect, useRef, useState } from "react";
+import { MutableRefObject, UIEventHandler, useEffect, useRef, useState } from "react";
 
 
 function Index() {
 
     const [scrollPosition, setScrollPosition] = useState(0); 
-    const reference : MutableRefObject<IParallax | null> = useRef(null); 
 
-    useEffect(() => {
-
-
-        if (!reference.current?.container) { return; }
+    const handleScroll = (event: any) => {
         
-        const container : HTMLDivElement = reference.current!.container.current;
-        const handleScroll = (event: Event) => {
-            setScrollPosition(() => container.scrollTop); 
-        }
-
-        container.addEventListener(("scroll"), handleScroll, { passive: true });
-
-
-        return () => { window.removeEventListener(("scroll"), handleScroll) }
-
-    }, []); 
+        const container = (event.target as HTMLDivElement);
+        setScrollPosition(() => container.scrollTop); 
+    }
 
     return (
     <>
@@ -52,12 +40,12 @@ function Index() {
         </nav>
 
         <main id={ styles.main }>
-        <Parallax ref={ reference } pages={ 5 }>
+        <Parallax  onScrollCapture={ handleScroll } pages={ 7.5 }>
             <ParallaxLayer offset={ 0 }><Intro /></ParallaxLayer>
             <ParallaxLayer offset={ 1 }><About /></ParallaxLayer>
             <ParallaxLayer offset={ 2 } sticky={{ start: 2, end: 3 }}><Portfolio position={ scrollPosition } /></ParallaxLayer>
-            <ParallaxLayer offset={ 4 }><Process /></ParallaxLayer>
-            <ParallaxLayer offset={ 5 }><Contact /></ParallaxLayer>
+            <ParallaxLayer offset={ 4 } sticky={{ start: 4, end: 5.5 }}><Process position={ scrollPosition } /></ParallaxLayer>
+            <ParallaxLayer offset={ 6.5 }><Contact /></ParallaxLayer>
         </Parallax>
         </main>
 

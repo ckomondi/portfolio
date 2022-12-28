@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { projects } from "../data/projects";
 import Webview from "../elements/Webview";
+import { useScrollPaging } from "../hooks/useScrollPaging";
 import styles from "../scss/sections/portfolio.module.scss";
 import Icon from "../utilities/elements/Icon";
 import { remToPixels } from "../utilities/functions/viewport";
@@ -13,20 +14,12 @@ interface PortfolioProps {
 
 const Portfolio = (props: PortfolioProps) => {
 
-    const { position } = props; 
-    const [highlightedIndex, setHighlightedIndex] = useState(0); 
-
-    useEffect(() => {
-        const windowHeight = (window.innerHeight * 1.0); 
-        const value = Math.max(0, position - (window.innerHeight * 2));
-
-        
-        const scrollPercent =  Math.round(((value / windowHeight) + Number.EPSILON) * 100) / 100; 
-        const targetPercent = Math.round(((1 / projects.length) + Number.EPSILON) * 100) / 100; 
-
-        setHighlightedIndex(() => Math.min(projects.length - 1, Math.floor(scrollPercent / targetPercent)));
-
-    }, [position]); 
+    const [highlightedIndex] = useScrollPaging({
+        position: props.position,
+        pageOffset: 2,
+        pageLength: 1,
+        itemCount: projects.length
+    });
 
     return (
 
