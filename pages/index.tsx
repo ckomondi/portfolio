@@ -7,10 +7,31 @@ import Contact from "../sections/Contact";
 import Intro from "../sections/Intro";
 import Portfolio from "../sections/Portfolio";
 import Process from "../sections/Process";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax"
+import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax"
+import { MutableRefObject, useEffect, useRef, useState } from "react";
 
 
 function Index() {
+
+    const [scrollPosition, setScrollPosition] = useState(0); 
+    const reference : MutableRefObject<IParallax | null> = useRef(null); 
+
+    useEffect(() => {
+
+
+        if (!reference.current?.container) { return; }
+        
+        const container : HTMLDivElement = reference.current!.container.current;
+        const handleScroll = (event: Event) => {
+            setScrollPosition(() => container.scrollTop); 
+        }
+
+        container.addEventListener(("scroll"), handleScroll, { passive: true });
+
+
+        return () => { window.removeEventListener(("scroll"), handleScroll) }
+
+    }, []); 
 
     return (
     <>
@@ -29,22 +50,14 @@ function Index() {
                 <p>sw</p>
             </div>
         </nav>
-    
-        {/* <main id={ styles.main }>
-            <Intro />
-            <About />
-            <Portfolio />
-            <Process />
-            <Contact />
-        </main> */}
 
         <main id={ styles.main }>
-        <Parallax pages={ 5 }>
+        <Parallax ref={ reference } pages={ 5 }>
             <ParallaxLayer offset={ 0 }><Intro /></ParallaxLayer>
             <ParallaxLayer offset={ 1 }><About /></ParallaxLayer>
-            <ParallaxLayer offset={ 2 }><Portfolio /></ParallaxLayer>
-            <ParallaxLayer offset={ 3 }><Process /></ParallaxLayer>
-            <ParallaxLayer offset={ 4 }><Contact /></ParallaxLayer>
+            <ParallaxLayer offset={ 2 } sticky={{ start: 2, end: 3 }}><Portfolio position={ scrollPosition } /></ParallaxLayer>
+            <ParallaxLayer offset={ 4 }><Process /></ParallaxLayer>
+            <ParallaxLayer offset={ 5 }><Contact /></ParallaxLayer>
         </Parallax>
         </main>
 

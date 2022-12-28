@@ -5,6 +5,9 @@
 
     
 .webview {
+    position: sticky;
+    left: 0px; 
+
     display: grid; 
     grid-template-rows: 1.5rem auto;
 

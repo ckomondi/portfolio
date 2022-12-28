@@ -1,15 +1,32 @@
 
 
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { projects } from "../data/projects";
 import Webview from "../elements/Webview";
 import styles from "../scss/sections/portfolio.module.scss";
 import Icon from "../utilities/elements/Icon";
+import { remToPixels } from "../utilities/functions/viewport";
 
+interface PortfolioProps {
+    position: number; 
+}
 
-const Portfolio = () => {
+const Portfolio = (props: PortfolioProps) => {
 
+    const { position } = props; 
     const [highlightedIndex, setHighlightedIndex] = useState(0); 
+
+    useEffect(() => {
+        const windowHeight = (window.innerHeight * 1.0); 
+        const value = Math.max(0, position - (window.innerHeight * 2));
+
+        
+        const scrollPercent =  Math.round(((value / windowHeight) + Number.EPSILON) * 100) / 100; 
+        const targetPercent = Math.round(((1 / projects.length) + Number.EPSILON) * 100) / 100; 
+
+        setHighlightedIndex(() => Math.min(projects.length - 1, Math.floor(scrollPercent / targetPercent)));
+
+    }, [position]); 
 
     return (
 
@@ -35,20 +52,25 @@ const Portfolio = () => {
             </div>
 
             <div className={ styles.scrollview }>
-                <div className={ styles.content }>
+            <div className={ styles.viewport }>
+                <div className={ styles.content } style={{ transform: `translateX(-${ remToPixels(24) * highlightedIndex }px)` }}>
                 {
                     projects.map((project, index) => 
-                        <Webview isHighlighted={ index === highlightedIndex } key={ index } project={ project } />
+                        <Webview index={ index } isHighlighted={ index === highlightedIndex } key={ index } project={ project } />
                     )
                 }
                 </div>
             </div>
             </div>
 
+            </div>
+
 
         </section>
     )
 }
+
+
 
 
 export default Portfolio; 
