@@ -1,21 +1,31 @@
 
 
+import { CSSProperties } from "react";
 import { Project } from "../models/project";
 import styles from "../scss/sections/webview.module.scss";
+import { remToPixels } from "../utilities/functions/viewport";
 
 interface WebviewProperties {
     index: number; 
+    focusIndex: number; 
+
     project: Project;
-    isHighlighted: boolean;
 }
 
 const Webview = (props: WebviewProperties) => {
 
-    const { project, isHighlighted, index } = props; 
+    const { index, focusIndex, project } = props; 
 
+    const style : CSSProperties = {
+        transform: (index < focusIndex) ?
+            `matrix(0.9, 0, 0, 0.9, -${ remToPixels(24) * index }, 0)` :
+            `matrix(1, 0, 0, 1, -${ remToPixels(24) * focusIndex }, 0)`,
+
+        zIndex: (1 * index) + 1
+    }
 
     return (
-        <div className={ styles.webview } style={{ zIndex: (1 * index) + 1 }}>
+        <div className={ `${ styles.webview } ${ index < focusIndex ? styles.isHidden : undefined }` } style={ style }>
             <div className={ styles.tabbar }>
                 <div><span></span><span></span><span></span></div>
 
@@ -25,7 +35,7 @@ const Webview = (props: WebviewProperties) => {
             </div>
 
             <div className={ styles.content }>
-                <img className={ isHighlighted ? styles.highlighted : undefined } src="/wavyfy.png" alt=""></img>
+                <img src="/wavyfy.png" alt=""></img>
             </div>
         </div>
     )

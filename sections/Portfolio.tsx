@@ -46,10 +46,10 @@ const Portfolio = (props: PortfolioProps) => {
 
             <div className={ styles.scrollview }>
             <div className={ styles.viewport }>
-                <div className={ styles.content } style={{ transform: `translateX(-${ remToPixels(24) * highlightedIndex }px)` }}>
+                <div className={ styles.content }>
                 {
                     projects.map((project, index) => 
-                        <Webview index={ index } isHighlighted={ index === highlightedIndex } key={ index } project={ project } />
+                        <Webview index={ index } focusIndex={ highlightedIndex } key={ index } project={ project } />
                     )
                 }
                 </div>
