@@ -1,9 +1,10 @@
 
 
 import { CSSProperties } from "react";
+import { useRemToPixels } from "../hooks/useRemToPixels";
 import { Project } from "../models/project";
 import styles from "../scss/sections/webview.module.scss";
-import { remToPixels } from "../utilities/functions/viewport";
+
 
 interface WebviewProperties {
     index: number; 
@@ -18,8 +19,8 @@ const Webview = (props: WebviewProperties) => {
 
     const style : CSSProperties = {
         transform: (index < focusIndex) ?
-            `matrix(0.9, 0, 0, 0.9, -${ remToPixels(24) * index }, 0)` :
-            `matrix(1, 0, 0, 1, -${ remToPixels(24) * focusIndex }, 0)`,
+            `matrix(0.9, 0, 0, 0.9, -${ useRemToPixels(24) * index }, 0)` :
+            `matrix(1, 0, 0, 1, -${ useRemToPixels(24) * focusIndex }, 0)`,
 
         zIndex: (1 * index) + 1
     }
@@ -35,7 +36,7 @@ const Webview = (props: WebviewProperties) => {
             </div>
 
             <div className={ styles.content }>
-                <img src="/wavyfy.png" alt=""></img>
+                <img src={ project.image } alt=""></img>
             </div>
         </div>
     )

@@ -9,7 +9,7 @@
     grid-template-rows: 1.5rem auto;
 
     width: 22rem;
-    height: 11rem;
+    height: 12.2rem;
 
     border-radius: 0.5rem; 
     overflow: hidden;
@@ -34,6 +34,8 @@
         grid-template-columns: 10% auto 10%;
         background-color: app.$color-background;
         padding: 0px 0.6rem; 
+
+        border-bottom: 1px solid #F3F6FB;
 
         div {
 

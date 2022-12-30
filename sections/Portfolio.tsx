@@ -6,7 +6,6 @@ import Webview from "../elements/Webview";
 import { useScrollPaging } from "../hooks/useScrollPaging";
 import styles from "../scss/sections/portfolio.module.scss";
 import Icon from "../utilities/elements/Icon";
-import { remToPixels } from "../utilities/functions/viewport";
 
 interface PortfolioProps {
     position: number; 
