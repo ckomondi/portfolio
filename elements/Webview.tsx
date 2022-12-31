@@ -27,6 +27,7 @@ const Webview = (props: WebviewProperties) => {
 
     return (
         <div className={ `${ styles.webview } ${ index < focusIndex ? styles.isHidden : undefined }` } style={ style }>
+        <div className={ styles.wrapper }>
             <div className={ styles.tabbar }>
                 <div><span></span><span></span><span></span></div>
 
@@ -38,6 +39,7 @@ const Webview = (props: WebviewProperties) => {
             <div className={ styles.content }>
                 <img src={ project.image } alt=""></img>
             </div>
+        </div>
         </div>
     )
 }
