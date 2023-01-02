@@ -27,8 +27,8 @@ const Portfolio = (props: PortfolioProps) => {
             <div id={ styles.showcase }>
             <div className={ styles.inspector }>
                 <span>
-                    <h3>Afyadux</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe numquam voluptatem omnis, fugit mollitia nesciunt, quibusdam</p>
+                    <h3>{ projects[highlightedIndex].title }</h3>
+                    <p>{ projects[highlightedIndex].description }</p>
                 </span>
 
                 <div className={ styles.pagination }>
