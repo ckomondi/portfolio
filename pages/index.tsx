@@ -40,12 +40,12 @@ function Index() {
         </nav>
 
         <main id={ styles.main }>
-        <Parallax  onScrollCapture={ handleScroll } pages={ 7.5 }>
+        <Parallax  onScrollCapture={ handleScroll } pages={ 8 }>
             <ParallaxLayer offset={ 0 }><Intro /></ParallaxLayer>
             <ParallaxLayer offset={ 1 }><About /></ParallaxLayer>
             <ParallaxLayer offset={ 2 } sticky={{ start: 2, end: 3 }}><Portfolio position={ scrollPosition } /></ParallaxLayer>
-            <ParallaxLayer offset={ 4 } sticky={{ start: 4, end: 5.5 }}><Process position={ scrollPosition } /></ParallaxLayer>
-            <ParallaxLayer offset={ 6.5 }><Contact /></ParallaxLayer>
+            <ParallaxLayer offset={ 4 } sticky={{ start: 4, end: 6 }}><Process position={ scrollPosition } /></ParallaxLayer>
+            <ParallaxLayer offset={ 7 }><Contact /></ParallaxLayer>
         </Parallax>
         </main>
 

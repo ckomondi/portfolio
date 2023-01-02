@@ -14,15 +14,15 @@ const Process = (props: ProcessProperties) => {
     const titles: string[] = [
         "Next.js",
         "TypeScript",
-        "Svelte",
         "SCSS",
-        "Firebase",
+        "Firebase NoSQL",
+        "Figma"
     ]; 
 
     const [selectedIndex] = useScrollPaging({
         position: position,
         pageOffset: 4,
-        pageLength: 1.5,
+        pageLength: 2,
         itemCount: titles.length
     });
 
