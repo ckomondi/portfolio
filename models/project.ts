@@ -6,6 +6,7 @@ export type Project = {
     link: string; 
     image: string; 
     description: string;
+    technologies: string[]
 }
 
 

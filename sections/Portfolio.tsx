@@ -32,16 +32,15 @@ const Portfolio = (props: PortfolioProps) => {
                 </span>
 
                 <div className={ styles.pagination }>
-                    <Icon isDisabled={ highlightedIndex === 0 }>
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.57 5.93005L3.5 12.0001L9.57 18.0701" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path><path d="M20.5 12H3.66998" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path></svg>
-                    </Icon>
-
-                    <Icon>
-                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14.43 5.93005L20.5 12.0001L14.43 18.0701" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path><path d="M3.5 12H20.33" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"></path></svg>
-                    </Icon>
+                {
+                    projects[highlightedIndex].technologies.map((tech, index) => 
+                        <Icon><svg></svg></Icon>
+                    )
+                }
                 </div>
 
             </div>
+
 
             <div className={ styles.scrollview }>
             <div className={ styles.viewport }>
