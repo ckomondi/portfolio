@@ -15,15 +15,15 @@ const Intro = () => {
 
             <div className={ styles.widgets }>
                 <div className={ `${ styles.widget } ${ styles.why }` }>
-                    <h5>Lorem ipsum dolor sit.</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    <h5>Design meets Technology</h5>
+                    <p>Web developer focused on turning ideas into functionally beautiful business applications</p>
                 </div>
             
                 <div></div>
             
                 <div className={ `${ styles.widget } ${ styles.how }` }>
-                    <h5>Lorem ipsum dolor sit.</h5>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    <h5>From 0000000 to 1100100</h5>
+                    <p>Design. Prototype. Develop. Iterate. Repeat.</p>
                 </div>
             </div>
 
