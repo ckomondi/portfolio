@@ -1,7 +1,7 @@
 
 
 import { useEffect, useMemo, useState } from "react";
-import { projects } from "../data/projects";
+import { projects } from "../data/data";
 import Webview from "../elements/Webview";
 import { useScrollPaging } from "../hooks/useScrollPaging";
 import styles from "../scss/sections/portfolio.module.scss";
@@ -34,7 +34,7 @@ const Portfolio = (props: PortfolioProps) => {
                 <div className={ styles.pagination }>
                 {
                     projects[highlightedIndex].technologies.map((tech, index) => 
-                        <Icon><svg></svg></Icon>
+                        <Icon key={ index }><svg></svg></Icon>
                     )
                 }
                 </div>

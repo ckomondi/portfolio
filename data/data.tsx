@@ -1,6 +1,8 @@
 
 
 import { Project } from "../models/project"
+import { Technology } from "../models/technology"
+
 
 
 const projects : Project[] = [
@@ -11,5 +13,15 @@ const projects : Project[] = [
     { title: "Afyadux", link: "afyadux.org", image: "/afyadux.png", description: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe numquam voluptatem omnis, fugit mollitia nesciunt, quibusdam", technologies: ["react", "next"] },
 ]
 
-export { projects }
+const technologies : Technology[] = [
+    { title: "Next.js", image: "/nextjs.png" },
+    { title: "TypeScript", image: "/typescript.svg" },
+    { title: "Firebase", image: "/firebase.svg" },
+    { title: "SCSS", image: "/sass.png" },
+    { title: "Figma", image: "/figma.svg" },
+]
+
+
+
+export { projects, technologies }
 

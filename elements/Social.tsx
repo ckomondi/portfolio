@@ -2,8 +2,11 @@
 import Icon from "../utilities/elements/Icon";
 import styles from "../scss/sections/social.module.scss";
 
+interface SocialProperties {
+    title: string;
+}
 
-const Social = () => {
+const Social = ({ title }: SocialProperties) => {
     return (
         <div className={ styles.social }>
             <Icon>
@@ -12,7 +15,7 @@ const Social = () => {
             </svg>
             </Icon>
 
-            <p>Title</p>
+            <p>{ title }</p>
         </div>
     )
 }

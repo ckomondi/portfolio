@@ -1,0 +1,61 @@
+
+
+@use "./variables" as app; 
+
+
+#navbar {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+
+    position: sticky; 
+    top: 0px; 
+    left: 0px; 
+    right: 0px;
+    padding: 0.5rem 6vmin; 
+    z-index: 10; 
+
+    .trail {
+        display: flex; 
+        align-items: center; 
+        justify-content: flex-end; 
+        gap: 0px 1rem;
+    
+        button#cta {
+            background-color: app.$color-foreground; 
+            border-radius: 2rem; 
+            color: app.$color-background;
+
+            padding: 0.2rem 1.0rem; 
+
+            &:hover {
+                animation-name: tilt-shake;
+                animation-duration: 200ms; 
+                animation-timing-function: ease-in;
+            }
+        }
+    }
+
+}
+
+@keyframes tilt-shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+#logo {
+    height: 2rem;
+    width: 2rem;
+
+    fill: app.$color-foreground; 
+
+    cursor: pointer;
+}
+
+
+
+

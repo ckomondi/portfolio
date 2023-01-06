@@ -11,14 +11,14 @@ const Contact = () => {
         <section id={ styles.contact }>
 
             <div className={ styles.psa }>
-                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <p>Let's make something beautiful</p>
             </div>
 
             <div className={ styles.links }>
-                <Social />
-                <Social />
-                <Social />
-                <Social />
+                <Social title={ "Email" } />
+                <Social title={ "Github" } />
+                <Social title={ "Discord" } />
+                <Social title={ "Slack" } />
             </div>
         </section>
     )

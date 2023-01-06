@@ -17,46 +17,6 @@ main#main {
 }
 
 
-#navbar {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between;
-
-    position: sticky; 
-    top: 0px; 
-    left: 0px; 
-    right: 0px;
-    padding: 0.5rem 6vmin; 
-    z-index: 10; 
-
-}
-
-#logo {
-    height: 2rem;
-    width: 2rem;
-
-    fill: app.$color-foreground; 
-
-    cursor: pointer;
-}
-
-.lang {
-    display: flex; 
-    align-items: center; 
-    justify-content: flex-end; 
-    gap: 0px 1rem;
-
-    p {
-        text-transform: uppercase;
-        font-size: 0.90rem;
-        cursor: pointer;
-        color: app.$color-shade;
-
-        &:first-child {
-            color: app.$color-foreground;
-        }
-    }
-}
 
 
 

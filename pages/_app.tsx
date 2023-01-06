@@ -10,6 +10,8 @@ function Application({ Component, pageProps } : AppProps) {
     return (
         <>
             <Head>
+                <meta charSet="utf-8" />
+
                 <title>CKO • Web Developer</title>
                 <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
             </Head>
